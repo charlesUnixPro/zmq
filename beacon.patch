@@ -1,0 +1,12 @@
+--- czmq-old/src/zbeacon.c	2014-12-09 06:20:15.000000000 -0800
++++ czmq-master-ff0d028b16/src/zbeacon.c	2015-06-15 12:25:21.621229092 -0700
+@@ -300,7 +300,8 @@
+             if (zsys_udp_send (self->udpsock, self->transmit, &self->broadcast))
+                 //  Try to recreate UDP socket on interface
+                 s_self_prepare_udp (self);
+-            self->ping_at = zclock_mono () + self->interval;
++            //self->ping_at = zclock_mono () + self->interval;
++            self->ping_at = zclock_mono () + 1000;
+         }
+     }
+     s_self_destroy (&self);

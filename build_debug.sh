@@ -12,6 +12,7 @@ cd ..
 mkdir czmq-master-ff0d028b16
 cd czmq-master-ff0d028b16
 unzip ../czmq-master-ff0d028b16.zip
+patch -p 1 < ../beacon.patch
 rm CMakeCache.txt
 cmake -DCMAKE_BUILD_TYPE=Debug . 
 make
